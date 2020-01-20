@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Square from './Square.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function gameBoardConstructor() {
+  let gameBoard = [];
+  for (let i = 0; i < 36; i++) {
+    let rando = Math.floor(Math.random() * 2);
+    if (rando === 0) {
+      gameBoard.push(false);
+    } else {
+      gameBoard.push(true);
+    }
+  }
+  let board = gameBoard.map((square) =>
+    <Square mine={square} />
   );
+  return board;
 }
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        {gameBoardConstructor()}
+      </div>
+    );
+  }
+}
+
+//ReactDOM.render(<App />, document.getElementById("root"));
 
 export default App;
