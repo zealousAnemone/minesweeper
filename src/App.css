@@ -1,5 +1,6 @@
 body {
   background: black;
+  text-align: center;
 }
 
 .square {
@@ -11,21 +12,12 @@ body {
   border-right: 5px solid grey;
   border-bottom: 5px solid grey;
   display: inline-block;
-}
-
-.row {
-  display: block;
-  height: 60px;
+  cursor: pointer;
 }
 
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gamearea {
+  width: 500px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
