@@ -4,12 +4,12 @@ import Square from './Square.js';
 
 function gameBoardConstructor() {
   let gameBoard = [];
-  for (let i = 0; i < 64; i++) {
+  for (let i = 0; i < 36; i++) {
     let rando = Math.floor(Math.random() * 2);
     if (rando === 0) {
-      gameBoard.push(false);
+      gameBoard.push("-");
     } else {
-      gameBoard.push(true);
+      gameBoard.push("*");
     }
   }
   let board = gameBoard.map((square) =>
